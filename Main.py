@@ -11,10 +11,10 @@ pirEcho = 0
 def getPirValue():
   return Pir.getPirStatus(pirEcho)
 
+def getSonarDistance():
+  return Sonar.getDistance(sonarTrigger,sonarEcho):
+
 if __name__ == "__main__":
-  #global sonarEcho
-  #global sonarTrigger
-  #global pirEcho
   sonarEcho = BoNu.sonarEchoPort()
   sonarTrigger = BoNu.sonarTriggerPort()
   pirEcho = BoNu.pirPort()
