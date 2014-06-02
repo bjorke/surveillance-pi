@@ -3,9 +3,9 @@
 import RPi.GPIO as GPIO
 import time
 
-sensorPin = 18
+sensorPin = 10
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(sensorPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 prevState = False
