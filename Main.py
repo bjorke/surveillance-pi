@@ -12,4 +12,4 @@ if __name__ == "__main__":
   sonarEcho = BoNu.sonarEchoPort()
   sonarTrigger = BoNu.sonarTriggerPort()
   pirEcho = BoNu.pirPort()
-  print(sonarEcho,sonarTrigger,pir)
+  print(sonarEcho,sonarTrigger,pirPort)
