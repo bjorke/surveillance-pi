@@ -1,4 +1,4 @@
-import BoardNumbers.py as BoNu
+import BoardNumbers as BoNu
 BoardNumbers.path.append("~/surveillance-pi/")
 
 sensorPin = BoNu.pirPort
