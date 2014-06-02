@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#PIR (motion) sensor - HC-SR501
+import RPi.GPIO as GPIO
 import sys
 sys.path.append("/home/pi/surveillance-pi/")
 import BoardNumbers as BoNu
