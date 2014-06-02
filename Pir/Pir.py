@@ -1,5 +1,5 @@
 import sys
-sys.path.append("~/surveillance-pi/")
+sys.path.append("/home/pi/surveillance-pi/")
 import BoardNumbers as BoNu
 
 sensorPin = BoNu.pirPort
