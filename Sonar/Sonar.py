@@ -12,7 +12,7 @@ def getDistance(sonarTrigger, sonarEcho):
 
   GPIO.output(sonarTrigger, True)
   time.sleep(0.00001)
-  GPIO.output(sonarEcho, False)
+  GPIO.output(sonarTrigger, False)
 
   sent = time.time()
 
