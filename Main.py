@@ -8,16 +8,15 @@ sonarEcho = 0
 sonarTrigger = 0
 pirEcho = 0
 
-def controlPir():
-  intVal = Pir.getPirStatus(pirEcho)
-  return intVal
+def getPirValue():
+  return Pir.getPirStatus(pirEcho)
 
 if __name__ == "__main__":
-  global sonarEcho
-  global sonarTrigger
-  global pirEcho
+  #global sonarEcho
+  #global sonarTrigger
+  #global pirEcho
   sonarEcho = BoNu.sonarEchoPort()
   sonarTrigger = BoNu.sonarTriggerPort()
   pirEcho = BoNu.pirPort()
 
-  print(controlPir())
+  print(getPirValue())
