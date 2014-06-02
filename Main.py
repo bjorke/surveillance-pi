@@ -8,7 +8,7 @@ sonarEcho = 0
 sonarTrigger = 0
 pirEcho = 0
 
-def controlPir
+def controlPir():
   intVal = Pit.getPirStatus(pirEcho)
   return intVal
 
