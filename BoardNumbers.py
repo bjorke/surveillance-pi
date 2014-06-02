@@ -9,9 +9,13 @@ GPIO.setmode(GPIO.BCM)
 
 global sonarEcho = 0
 global sonarTrigger = 0
+global pir = 18
 
 def sonarEchoPort():
   return sonarEcho
 
 def sonarTriggerPort():
   return sonarTrigger
+
+def pirPort():
+  return pir
