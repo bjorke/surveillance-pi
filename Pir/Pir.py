@@ -6,7 +6,8 @@ sys.path.append("/home/pi/surveillance-pi/")
 import BoardNumbers as BoNu
 
 sensorPin = BoNu.pirPort
-print(sensorPin)
+print("BoNu.pirPort; ",BoNu.pirPort)
+print("sensorPin; ",sensorPin)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(sensorPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
