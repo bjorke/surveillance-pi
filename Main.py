@@ -9,7 +9,7 @@ sonarTrigger = 0
 pirEcho = 0
 
 def controlPir():
-  intVal = Pit.getPirStatus(pirEcho)
+  intVal = Pir.getPirStatus(pirEcho)
   return intVal
 
 if __name__ == "__main__":
