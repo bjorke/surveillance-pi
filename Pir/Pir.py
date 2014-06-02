@@ -1,15 +1,9 @@
 #!/usr/bin/python
 #PIR (motion) sensor - HC-SR501
 import RPi.GPIO as GPIO
-import sys
-sys.path.append("/home/pi/surveillance-pi/")
-import BoardNumbers as BoNu
 
-sensorPin = BoNu.pirPort
-print("BoNu.pirPort; ",BoNu.pirPort)
-print("sensorPin; ",sensorPin)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(sensorPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-def getPirStatus():
+def getPirStatus(sensorPin):
+  GPIO.setup(sensorPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
   return GPIO.input(sensorPin)
