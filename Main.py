@@ -3,6 +3,8 @@ import BoardNumbers as BoNu
 import sys
 sys.path.append("/home/pi/surveillance-pi/Pir")
 import Pir
+sys.path.append("/home/pi/surveillance-pi/Sonar")
+import Sonar
 
 sonarEcho = 0
 sonarTrigger = 0
