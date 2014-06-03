@@ -7,9 +7,9 @@ GPIO.setwarnings(False)
 # Alternatively use GPIO.BOARD to use board pin numbering
 GPIO.setmode(GPIO.BCM)
 
-sonarEcho = 24
-sonarTrigger = 25
 pir = 18
+sonarTrigger = 24
+sonarEcho = 25
 
 def sonarEchoPort():
   return sonarEcho
