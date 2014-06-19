@@ -21,5 +21,5 @@ if __name__ == "__main__":
   sonarTrigger = BoNu.sonarTriggerPort()
   pirEcho = BoNu.pirPort()
 
-  print("Pir; " + getPirValue())
-  print("Sonar; " + getSonarDistance())
+  print("Pir; " , getPirValue())
+  print("Sonar; " , getSonarDistance())
