@@ -37,6 +37,7 @@ def mainThread():
   global threadsArray
   global sonarEcho
   global sonarTrigger
+  global pirEcho
   sonarEcho = BoNu.sonarEchoPort()
   sonarTrigger = BoNu.sonarTriggerPort()
   pirEcho = BoNu.pirPort()
