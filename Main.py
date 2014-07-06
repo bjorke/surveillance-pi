@@ -9,17 +9,23 @@ import Pir
 sys.path.append("/home/pi/surveillance-pi/Sonar")
 import Sonar
 
+#pin variabels
 sonarEcho = 0
 sonarTrigger = 0
 pirEcho = 0
+#for debugging
+debugging = True
 
 def getPirValue():
-  print("pir ehco; " , pirEcho)
+  if debugging:
+    print("pir ehco; " , pirEcho)
   return Pir.getPirStatus(pirEcho)
 def getSonarDistance():
-  print("sonar echo; " , sonarEcho)
+  if debugging:
+    print("sonar echo; " , sonarEcho)
   return Sonar.getDistance(sonarTrigger,sonarEcho)
 
+#keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
     def __init__(self, threadID, name):
