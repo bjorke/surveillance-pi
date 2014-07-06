@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import BoardNumbers as BoNu
 import sys
+import threading
 from threading import Thread, Event
 
 sys.path.append("/home/pi/surveillance-pi/Pir")
