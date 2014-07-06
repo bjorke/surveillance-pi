@@ -51,11 +51,13 @@ def mainThread():
     threadTwo.start()
     threadsArray.append(threadTwo)
 
-
+    while True:
+        for t in threadsArray:
+            t.join()
 
 if __name__ == "__main__":
    mainThreadRun = Thread(target=mainThread , args=())
-   #if mainThreadV.isAlive():
-      #mainThreadV.join()
-   #else:
-   mainThreadRun.start()
+   if mainThreadRun.isAlive():
+     mainThreadRun.join()
+   else:
+     mainThreadRun.start()
