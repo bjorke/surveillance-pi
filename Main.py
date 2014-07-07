@@ -64,10 +64,11 @@ def mainThread():
       t.join()
     break
 
+mainThreadRun = Thread(target=mainThread , args=())
+
 if __name__ == "__main__":
   counter = 0
-
-  mainThreadRun = Thread(target=mainThread , args=())
+  global mainThreadRun
 
   while counter < 10:
     if not mainThreadRun.isAlive():
