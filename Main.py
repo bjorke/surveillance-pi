@@ -65,8 +65,12 @@ def mainThread():
     break
 
 if __name__ == "__main__":
+  counter = 0
+
   mainThreadRun = Thread(target=mainThread , args=())
-  for counter in range (0, 10):
+
+  while counter < 10:
     if not mainThreadRun.isAlive():
       mainThreadRun.start()
       wait(1)
+    counter += 1
