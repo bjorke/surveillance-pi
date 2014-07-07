@@ -72,5 +72,4 @@ if __name__ == "__main__":
   while counter < 10:
     if not mainThreadRun.isAlive():
       mainThreadRun.start()
-      time.sleep(1)
-    counter += 1
+      counter += 1
