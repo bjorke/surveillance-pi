@@ -3,10 +3,11 @@ import BoardNumbers as BoNu
 import sys
 import threading
 from threading import Thread, Event
+import os
 
-sys.path.append("/home/pi/surveillance-pi/Pir")
+sys.path.append(os.getcwd() + "/Pir")
 import Pir
-sys.path.append("/home/pi/surveillance-pi/Sonar")
+sys.path.append(os.getcwd() + "/Sonar")
 import Sonar
 
 #pin variabels
