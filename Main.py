@@ -4,6 +4,7 @@ import sys
 import threading
 from threading import Thread, Event
 import os
+import time
 
 sys.path.append(os.getcwd() + "/Pir")
 import Pir
@@ -64,6 +65,8 @@ def mainThread():
     break
 
 if __name__ == "__main__":
-   mainThreadRun = Thread(target=mainThread , args=())
-   if not mainThreadRun.isAlive():
-     mainThreadRun.start()
+  mainThreadRun = Thread(target=mainThread , args=())
+    for counter in range (0, 10):
+      if not mainThreadRun.isAlive():
+        mainThreadRun.start()
+        wait(1)
