@@ -72,7 +72,8 @@ if __name__ == "__main__":
 
   while counter < 10:
     if not mainThreadRun.isAlive():
-      if debugging:
-        print("Starting mainthread " , mainThreadRun)
       mainThreadRun.start()
       counter += 1
+      time.sleep(1)
+      mainThread.join()
+      break
