@@ -11,7 +11,7 @@ sys.path.append(os.getcwd() + "/Pir")
 import Pir
 sys.path.append(os.getcwd() + "/Sonar")
 import Sonar
-sys.path.append(os.getcwd() + "/Canera")
+sys.path.append(os.getcwd() + "/Camera")
 import Camera
 
 #pin variabels
