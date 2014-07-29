@@ -5,11 +5,14 @@ import threading
 from threading import Thread, Event
 import os
 import time
+import Settings
 
 sys.path.append(os.getcwd() + "/Pir")
 import Pir
 sys.path.append(os.getcwd() + "/Sonar")
 import Sonar
+sys.path.append(os.getcwd() + "/Canera")
+import Camera
 
 #pin variabels
 sonarEcho = 0
@@ -26,7 +29,10 @@ def getSonarDistance():
   if debugging:
     print("sonar echo; " , sonarEcho)
   return Sonar.getDistance(sonarTrigger,sonarEcho)
-
+def getPicture():
+  if debugging:
+    print("taking pucture to path; ", Settings.camera["path"])
+  return Camera.takePicture()
 #keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
@@ -41,6 +47,9 @@ class startChildThread (threading.Thread):
         if self.name == "pir":
           print("Pir; " , getPirValue())
 
+        if self.name == "camera":
+          print("camera" , getPicture())
+
 def mainThread():
   global threadsArray
   global sonarEcho
@@ -51,6 +60,7 @@ def mainThread():
   pirEcho = BoNu.pirPort()
   threadOne = startChildThread(1, "sonar")
   threadTwo = startChildThread(2, "pir")
+  threadThree = startChildThread(3, "camera")
 
   if not threadOne.isAlive():
     threadOne.start()
@@ -58,6 +68,9 @@ def mainThread():
   if not threadTwo.isAlive():
     threadTwo.start()
     threadsArray.append(threadTwo)
+  if not threadThree.isAlive():
+    threadThree.start()
+    threadsArray.append(threadThree)
 
   while True:
     for t in threadsArray:
