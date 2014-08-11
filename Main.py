@@ -8,11 +8,11 @@ import os
 import time
 import Settings
 #Importing all the different hardware modules
-sys.path.append(os.getcwd() + Settings.path["Pir"])
+sys.path.append(os.getcwd() + Settings.path["pirModule"])
 import Pir
-sys.path.append(os.getcwd() + Settings.path["Sonar"])
+sys.path.append(os.getcwd() + Settings.path["sonarModule"])
 import Sonar
-sys.path.append(os.getcwd() + Settings.path["Camera"])
+sys.path.append(os.getcwd() + Settings.path["cameraModule"])
 import Camera
 #Ignores any warning
 GPIO.setwarnings(False)
