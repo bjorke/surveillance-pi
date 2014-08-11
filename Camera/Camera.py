@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#Raspberry PI camera module
+
 import time
 import picamera
 
