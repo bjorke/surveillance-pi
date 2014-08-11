@@ -19,9 +19,9 @@ GPIO.setwarnings(False)
 # Alternatively use GPIO.BOARD to use board pin numbering
 GPIO.setmode(GPIO.BCM)
 #pin variabels
-sonarEcho = Settings.path["sonarEchoPort"]
-sonarTrigger = Settings.path["sonarTriggerPort"]
-pirEcho = Settings.path["pirPort"]
+sonarEcho = Settings.pinNumbers["sonarEchoPort"]
+sonarTrigger = Settings.pinNumbers["sonarTriggerPort"]
+pirEcho = Settings.pinNumbers["pirPort"]
 #for debugging
 debugging = True
 
