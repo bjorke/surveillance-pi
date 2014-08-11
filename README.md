@@ -4,7 +4,7 @@
 *  PIR (motion) sensor - HC-SR501
 *  Raspberry PI camera module
 
-# packages installed
+## packages installed
 * python-picamera
 * python3-picamera
 * python-rpi.gpio
