@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #PIR (motion) sensor - HC-SR501
 import RPi.GPIO as GPIO
+import Settings
 
 GPIO.setmode(GPIO.BCM)
 

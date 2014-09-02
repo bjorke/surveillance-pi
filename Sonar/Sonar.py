@@ -2,6 +2,7 @@
 # Measuring distance with HC-SR04 ultrasonic Module
 import time
 import RPi.GPIO as GPIO
+import Settings
 
 #using BCM GPIO reference
 GPIO.setmode(GPIO.BCM)

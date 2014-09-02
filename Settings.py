@@ -4,6 +4,12 @@ path = dict(
   cameraModule = "/Camera",
   imageStorage = "",
 )
+pathTest = dict(
+  pirModule = "/PirTest",
+  sonarModule = "/SonarTest",
+  cameraModule = "/CameraTest",
+  imageStorage = "/Test",
+)
 
 pinNumbers = dict(
   sonarEchoPort = 25,

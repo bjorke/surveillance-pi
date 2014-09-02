@@ -3,6 +3,7 @@
 
 import time
 import picamera
+import Settings
 
 def takePicture():
 
