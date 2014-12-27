@@ -7,6 +7,7 @@ from threading import Thread, Event
 import os
 import time
 import Settings
+import fig
 #Importing all the different hardware modules
 sys.path.append(os.getcwd() + Settings.path["pirModule"])
 import Pir
@@ -36,7 +37,8 @@ def getSonarDistance():
 def getPicture():
     if debugging:
         print("taking pucture to path; ", Settings.path["imageStorage"])
-    return Camera.takePicture()
+    image = Camera.takePicture()
+    fig.savefig(os.path.join(Settings.path["imageStorage"], image))
 #keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
@@ -46,13 +48,13 @@ class startChildThread (threading.Thread):
         self.name = name
     def run(self):
         if self.name == "sonar":
-          print("Sonar; " , getSonarDistance())
+          getSonarDistance()
 
         if self.name == "pir":
-          print("Pir; " , getPirValue())
+          getPirValue()
 
         if self.name == "camera":
-          print("camera" , getPicture())
+          getPicture()
 
 def mainThread():
     global threadsArray
