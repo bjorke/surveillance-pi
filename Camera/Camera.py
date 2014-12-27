@@ -11,6 +11,6 @@ def takePicture():
         camera.start_preview()
         #time.sleep(5)
         timeNow = time.strftime("%Y%m%d-%H%M%S")
-        returnImage = camera.capture(timeNow + ".jpg")
+        returnImage = camera.capture( Settings.path["imageStorage"] + timeNow + ".jpg")
         camera.stop_preview()
         return returnImage

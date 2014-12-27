@@ -2,7 +2,7 @@ path = dict(
   pirModule = "/Pir",
   sonarModule = "/Sonar",
   cameraModule = "/Camera",
-  imageStorage = "/Images",
+  imageStorage = "/Images/",
 )
 pathTest = dict(
   pirModule = "/PirTest",
