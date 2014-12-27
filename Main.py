@@ -60,19 +60,20 @@ def mainThread():
     global threadsArray
 
     threadOne = startChildThread(1, "sonar")
-    threadTwo = startChildThread(2, "pir")
-    threadThree = startChildThread(3, "camera")
+    #threadTwo = startChildThread(2, "pir")
+    #threadThree = startChildThread(3, "camera")
 
     if not threadOne.isAlive():
         threadOne.start()
         threadsArray.append(threadOne)
+    '''
     if not threadTwo.isAlive():
         threadTwo.start()
         threadsArray.append(threadTwo)
     if not threadThree.isAlive():
         threadThree.start()
         threadsArray.append(threadThree)
-
+    '''
     while True:
         for t in threadsArray:
             t.join()
