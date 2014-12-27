@@ -82,6 +82,8 @@ if __name__ == "__main__":
     mainThreadRun = Thread(target=mainThread , args=())
 
     while counter < 10:
+        if debugging:
+            print(mainThreadRun.isAlive())
         if not mainThreadRun.isAlive():
             mainThreadRun.start()
         counter += 1
