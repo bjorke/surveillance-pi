@@ -83,6 +83,7 @@ if __name__ == "__main__":
 
     while counter < 10:
         if debugging:
+            pint("counter is; ",counter)
             print("checking if thread is alive; ",mainThreadRun.isAlive())
         if not mainThreadRun.isAlive():
             if debugging:
