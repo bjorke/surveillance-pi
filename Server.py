@@ -36,7 +36,7 @@ def pir ():
         currState =  Pir.getPirStatus(pirEcho)
         if currState != prevState:
             print("pit changed value")
-            
+
 class myThread (threading.Thread):
     def __init__(self, threadID, name):
         threading.Thread.__init__(self)
@@ -45,7 +45,7 @@ class myThread (threading.Thread):
     def run(self):
         if self.name == "pir":
 
-        print "thread; " + self.name
+        print ("thread; " , self.name)
 
 threads = []
 def handlerThread():
