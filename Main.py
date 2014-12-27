@@ -84,6 +84,6 @@ if __name__ == "__main__":
     while counter < 10:
         if not mainThreadRun.isAlive():
             mainThreadRun.start()
-            counter += 1
-            time.sleep(1)
-        mainThreadRun.kill()
+        counter += 1
+        time.sleep(1)
+    mainThreadRun.exit()
