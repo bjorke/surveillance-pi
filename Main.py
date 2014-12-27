@@ -91,4 +91,4 @@ if __name__ == "__main__":
             mainThreadRun.start()
         counter += 1
         time.sleep(1)
-    mainThreadRun.exit()
+        mainThreadRun.exit()
