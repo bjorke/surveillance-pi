@@ -37,7 +37,7 @@ def getPicture():
     if debugging:
         print("taking pucture to path; ", Settings.path["imageStorage"])
     image = Camera.takePicture()
-    os.path.join(Settings.path["imageStorage"],image)
+    os.path.join(os.getcwd(),Settings.path["imageStorage"],image)
 #keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
