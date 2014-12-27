@@ -24,21 +24,35 @@ pirEcho = Settings.pinNumbers["pirPort"]
 #for debugging
 debugging = True
 
+#output for pir
+pirOutput = False
+
+def pir ():
+    prevState = False
+    currState = False
+    while True:
+        time.sleep(0.1)
+        prevState = currState
+        currState =  Pir.getPirStatus(pirEcho)
+        if currState != prevState:
+            print("pit changed value")
+            
 class myThread (threading.Thread):
-    def __init__(self, threadID, name, counter):
+    def __init__(self, threadID, name):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.name = name
-        self.counter = counter
     def run(self):
+        if self.name == "pir":
+
         print "thread; " + self.name
 
 threads = []
 def handlerThread():
     # Create new threads
-    thread1 = myThread(1, "Thread-1", 1)
-    thread2 = myThread(2, "Thread-2", 2)
-    thread3 = myThread(3, "Thread-3", 3)
+    thread1 = myThread(1, "pir")
+    thread2 = myThread(2, "Thread-2")
+    thread3 = myThread(3, "Thread-3")
 
     # Start new Threads
     thread1.start()
@@ -53,7 +67,6 @@ def handlerThread():
     # Wait for all threads to complete
     for t in threads:
         t.join()
-    print "Exiting Main Thread"
 
 if __name__ == "__main__":
     handler = Thread(name="handlerThread",target=handlerThread)
