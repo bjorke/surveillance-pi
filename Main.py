@@ -75,6 +75,7 @@ def mainThread():
         for t in threadsArray:
             t.join()
         break
+    break
 
 
 if __name__ == "__main__":
@@ -91,4 +92,3 @@ if __name__ == "__main__":
             mainThreadRun.start()
         counter += 1
         time.sleep(1)
-        mainThreadRun.exit()
