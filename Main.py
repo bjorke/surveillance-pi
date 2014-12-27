@@ -26,17 +26,17 @@ pirEcho = Settings.pinNumbers["pirPort"]
 debugging = True
 
 def getPirValue():
-  if debugging:
-    print("pir ehco; " , pirEcho)
-  return Pir.getPirStatus(pirEcho)
+    if debugging:
+        print("pir ehco; " , pirEcho)
+    return Pir.getPirStatus(pirEcho)
 def getSonarDistance():
-  if debugging:
-    print("sonar echo; " , sonarEcho)
-  return Sonar.getDistance(sonarTrigger,sonarEcho)
+    if debugging:
+        print("sonar echo; " , sonarEcho)
+    return Sonar.getDistance(sonarTrigger,sonarEcho)
 def getPicture():
-  if debugging:
-    print("taking pucture to path; ", Settings.path["imageStorage"])
-  return Camera.takePicture()
+    if debugging:
+        print("taking pucture to path; ", Settings.path["imageStorage"])
+    return Camera.takePicture()
 #keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
@@ -55,35 +55,35 @@ class startChildThread (threading.Thread):
           print("camera" , getPicture())
 
 def mainThread():
-  global threadsArray
+    global threadsArray
 
-  threadOne = startChildThread(1, "sonar")
-  threadTwo = startChildThread(2, "pir")
-  threadThree = startChildThread(3, "camera")
+    threadOne = startChildThread(1, "sonar")
+    threadTwo = startChildThread(2, "pir")
+    threadThree = startChildThread(3, "camera")
 
-  if not threadOne.isAlive():
-    threadOne.start()
-    threadsArray.append(threadOne)
-  if not threadTwo.isAlive():
-    threadTwo.start()
-    threadsArray.append(threadTwo)
-  if not threadThree.isAlive():
-    threadThree.start()
-    threadsArray.append(threadThree)
+    if not threadOne.isAlive():
+        threadOne.start()
+        threadsArray.append(threadOne)
+    if not threadTwo.isAlive():
+        threadTwo.start()
+        threadsArray.append(threadTwo)
+    if not threadThree.isAlive():
+        threadThree.start()
+        threadsArray.append(threadThree)
 
-  while True:
-    for t in threadsArray:
-      t.join()
-    break
+    while True:
+        for t in threadsArray:
+            t.join()
+        break
 
 
 if __name__ == "__main__":
-  counter = 0
-  mainThreadRun = Thread(target=mainThread , args=())
+    counter = 0
+    mainThreadRun = Thread(target=mainThread , args=())
 
-  while counter < 10:
-    if not mainThreadRun.isAlive():
-      mainThreadRun.start()
-      counter += 1
-      time.sleep(1)
-      mainThreadRun.kill()
+    while counter < 10:
+        if not mainThreadRun.isAlive():
+            mainThreadRun.start()
+            counter += 1
+            time.sleep(1)
+        mainThreadRun.kill()
