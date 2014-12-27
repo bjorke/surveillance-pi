@@ -5,13 +5,13 @@ import time
 import picamera
 import Settings
 
-def takePicture():
+def takePicture(folder):
 
     with picamera.PiCamera() as camera:
         camera.resolution = (1024, 768)
         camera.start_preview()
         timeNow = time.strftime("%Y%m%d-%H%M%S")
-        returnImage = camera.capture(timeNow + ".jpg")
-        print("### IMAGE; ",returnImage)
+        folderAndFile = folder + timeNow + ".jpg"
+        returnImage = camera.capture(folderAndFile)
         camera.stop_preview()
         return returnImage
