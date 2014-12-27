@@ -26,12 +26,9 @@ pirEcho = Settings.pinNumbers["pirPort"]
 debugging = True
 
 def getPirValue():
-    if debugging:
-        print("pir ehco; " , pirEcho)
     return Pir.getPirStatus(pirEcho)
 def getSonarDistance():
-    if debugging:
-        print("sonar echo; " , sonarEcho)
+
     return Sonar.getDistance(sonarTrigger,sonarEcho)
 def getPicture():
     imagePath = os.getcwd() + Settings.path["imageStorage"]
@@ -49,13 +46,15 @@ class startChildThread (threading.Thread):
         self.name = name
     def run(self):
         if self.name == "sonar":
-          getSonarDistance()
+          print(getSonarDistance())
 
         if self.name == "pir":
-          getPirValue()
+          print(getPirValue())
 
         if self.name == "camera":
           getPicture()
+    def cancel(self):
+      self.thread.cancel()
 
 def mainThread():
     global threadsArray
@@ -79,12 +78,11 @@ def mainThread():
             t.join()
         break
 
-
 if __name__ == "__main__":
     counter = 0
-    mainThreadRun = Thread(target=mainThread , args=())
 
     while counter < 10:
+        mainThreadRun = Thread(name="main thread",target=mainThread)
         if debugging:
             print("counter is; ",counter)
             print("checking if thread is alive; ",mainThreadRun.isAlive())
@@ -93,4 +91,4 @@ if __name__ == "__main__":
                 print("starting main thread")
             mainThreadRun.start()
         counter += 1
-        time.sleep(1)
+        mainThreadRun.join(2)
