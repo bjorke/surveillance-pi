@@ -37,9 +37,6 @@ def getPicture():
     if debugging:
         print("taking pucture to path; ", Settings.path["imageStorage"])
     imagePath = os.getcwd() + Settings.path["imageStorage"]
-    print ("image path; ",imagePath)
-    print ("image; ",image)
-    os.path.join(imagePath,image)
 
     Camera.takePicture(imagePath)
 

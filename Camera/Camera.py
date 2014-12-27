@@ -12,6 +12,7 @@ def takePicture(folder):
         camera.start_preview()
         timeNow = time.strftime("%Y%m%d-%H%M%S")
         folderAndFile = folder + timeNow + ".jpg"
+        print("save as; ",folderAndFile)
         returnImage = camera.capture(folderAndFile)
         camera.stop_preview()
         return returnImage
