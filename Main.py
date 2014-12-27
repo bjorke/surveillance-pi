@@ -46,10 +46,10 @@ class startChildThread (threading.Thread):
         self.name = name
     def run(self):
         if self.name == "sonar":
-          print(getSonarDistance())
+          print("sonar distance;",getSonarDistance())
 
         if self.name == "pir":
-          print(getPirValue())
+          print("pir; ",getPirValue())
 
         if self.name == "camera":
           getPicture()
