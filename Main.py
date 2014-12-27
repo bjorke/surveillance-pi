@@ -7,7 +7,6 @@ from threading import Thread, Event
 import os
 import time
 import Settings
-import fig
 #Importing all the different hardware modules
 sys.path.append(os.getcwd() + Settings.path["pirModule"])
 import Pir
@@ -38,7 +37,7 @@ def getPicture():
     if debugging:
         print("taking pucture to path; ", Settings.path["imageStorage"])
     image = Camera.takePicture()
-    fig.savefig(os.path.join(Settings.path["imageStorage"], image))
+    os.path.join(Settings.path["imageStorage"],image)
 #keeping track of the threads spawned
 threadsArray = []
 class startChildThread (threading.Thread):
