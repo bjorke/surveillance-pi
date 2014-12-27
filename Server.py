@@ -27,7 +27,7 @@ debugging = True
 #output for pir
 pirOutput = False
 
-def pir ():
+def startPir ():
     prevState = False
     currState = False
     while True:
@@ -44,8 +44,8 @@ class myThread (threading.Thread):
         self.name = name
     def run(self):
         if self.name == "pir":
-
-        print ("thread; " , self.name)
+            startPir()
+        print("thread; " , self.name)
 
 threads = []
 def handlerThread():
