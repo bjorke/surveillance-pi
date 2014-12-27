@@ -34,11 +34,11 @@ def getSonarDistance():
         print("sonar echo; " , sonarEcho)
     return Sonar.getDistance(sonarTrigger,sonarEcho)
 def getPicture():
-    if debugging:
-        print("taking pucture to path; ", Settings.path["imageStorage"])
     imagePath = os.getcwd() + Settings.path["imageStorage"]
+    if debugging:
+        print("taking pucture to path; ", imagePath)
 
-    Camera.takePicture(imagePath)
+    Camera.takePicture(imagePath,debugging)
 
 #keeping track of the threads spawned
 threadsArray = []
