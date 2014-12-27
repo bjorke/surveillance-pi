@@ -31,6 +31,4 @@ def getDistance(sonarTrigger, sonarEcho):
 
     distance = elapsed * 34300 / 2
 
-    #reset GPIO
-    GPIO.cleanup()
     return distance
