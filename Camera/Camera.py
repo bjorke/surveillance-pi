@@ -12,5 +12,6 @@ def takePicture():
         camera.start_preview()
         timeNow = time.strftime("%Y%m%d-%H%M%S")
         returnImage = camera.capture(timeNow + ".jpg")
+        print("### IMAGE; ",returnImage)
         camera.stop_preview()
         return returnImage
